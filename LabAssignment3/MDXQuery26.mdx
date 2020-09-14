@@ -1,0 +1,38 @@
+--query1
+Select ([Measures].[Sales Amount])on 0, 
+filter([Dim Geography].[City].children, [Measures].[Sales Amount]> 1000000) on 1
+from [Adventure Works DW2019]
+where [Dim Geography].[English Country Region Name].&[United States];  
+
+
+
+--query 2
+select ([Dim Customer].[Gender].children,[Measures].[Sales amount]) on 0,
+ (order([Dim Product].[Color].children,[Measures].[sales amount],desc)) on 1
+from [Adventure Works DW2019]
+where [Dim Product Category].[English Product Category Name].[Bikes];
+
+--query 3
+
+select [measures].[order quantity] on 0,
+TopCount
+({[dim Geography].[city].children * [dim date].[calendar year].[2014]} ,5 ,[measures].[order quantity] ) ON 1
+from [Adventure Works DW2019] 
+where [Dim Product Category].[English Product Category Name].&[Bikes];
+
+
+--query 4
+
+-- for each quarter
+
+select ([order date].[calendar quarter].children)on columns,
+filter([Dim geography].[city].children,[order date].[calendar year].[2013]) on rows
+from[Adventure Works DW2019]
+where([measures].[sales amount]) 
+
+--for each month
+
+select ([order date].[English month name].children)on columns,
+filter([Dim geography].[city].children,[order date].[calendar year].[2013]) on rows
+from[Adventure Works DW2019]
+where([measures].[sales amount]) 
