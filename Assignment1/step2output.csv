@@ -1,0 +1,6 @@
+Fname,MINIT,LNAME,ssn,bdate,employeeaddress,sex,employeesalary,superssn,DNO,Dname,MGRssn,MGRstartdate
+John,B,Smith,123456789,09/01/55,"731 Fondren,Houston,TX",M,30000,987654321,5,Research,333445555,5/22/1978
+Franklin,T,Wong,333445555,08/12/45,"638 Voss,Houston,TX",M,40000,888665555,5,Research,333445555,5/22/1978
+Joyce,A,English,453453453,31/07/62,"5631 Rice,Houston,TX",F,25000,333445555,5,Research,333445555,5/22/1978
+Ramesh,K,Narayan,666884444,15/09/52,"975 Fire Oak,Humble,TX",M,38000,333445555,5,Research,333445555,5/22/1978
+
